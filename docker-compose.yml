@@ -1,0 +1,330 @@
+# version: '3'
+
+# services:
+# #sqlpart
+#   app:
+#     image: mysql:8.0
+#     environment:
+#       MYSQL_ROOT_PASSWORD: root
+#       MYSQL_DATABASE: airportdb
+#     ports:
+#       - "3307:3306"
+#     networks:
+#       - local_network
+# #Airflow part
+#   postgres:
+#     image: postgres:13
+#     env_file:
+#       - .env
+#     volumes:
+#       - postgres-db-volume:/var/lib/postgresql/data
+#     healthcheck:
+#       test: ["CMD", "pg_isready", "-U", "airflow"]
+#       interval: 5s
+#       retries: 5
+#     restart: always
+
+#   scheduler:
+#     build: .
+#     command: scheduler
+#     restart: on-failure
+#     depends_on:
+#       - postgres
+#     env_file:
+#       - .env
+#     volumes:
+#       - ./dags:/opt/airflow/dags
+#       - ./logs:/opt/airflow/logs
+#       - ./plugins:/opt/airflow/plugins
+#       - ./scripts:/opt/airflow/scripts
+#       - ./credentials/:/opt/airflow/credentials:ro
+
+#   webserver:
+#     build: .
+#     entrypoint: ./scripts/entrypoint.sh
+#     restart: on-failure
+#     depends_on:
+#       - postgres
+#       - scheduler
+#     env_file:
+#       - .env
+#     volumes:
+#       - ./dags:/opt/airflow/dags
+#       - ./logs:/opt/airflow/logs
+#       - ./plugins:/opt/airflow/plugins
+#       - ./credentials/:/opt/airflow/credentials:ro
+#       - ./scripts:/opt/airflow/scripts
+#     user: "${AIRFLOW_UID:-50000}:0"
+#     ports:
+#       - "8080:8080"
+#     healthcheck:
+#       test: [ "CMD-SHELL", "[ -f /home/airflow/airflow-webserver.pid ]" ]
+#       interval: 30s
+#       timeout: 30s
+#       retries: 3
+# #sqlpart
+# networks:
+#   local_network:
+#     driver: bridge
+# #Airflow part
+# volumes:
+#   postgres-db-volume:
+
+
+
+
+
+
+
+
+
+
+
+
+# # version: '3'
+
+# # services:
+# #   app:
+# #     image: mysql:8.0
+# #     environment:
+# #       MYSQL_ROOT_PASSWORD: root
+# #       MYSQL_DATABASE: airportdb
+# #     ports:
+# #       - "3307:3306"
+# #     networks:
+# #       - local_network
+  
+# #   postgres:
+# #         image: postgres:13
+# #         env_file:
+# #             - .env
+# #         volumes:
+# #             - postgres-db-volume:/var/lib/postgresql/data
+# #         healthcheck:
+# #             test: ["CMD", "pg_isready", "-U", "airflow"]
+# #             interval: 5s
+# #             retries: 5
+# #         restart: always
+
+# #     scheduler:
+# #         build: .
+# #         command: scheduler
+# #         restart: on-failure
+# #         depends_on:
+# #             - postgres
+# #         env_file:
+# #             - .env
+# #         volumes:
+# #             - ./dags:/opt/airflow/dags
+# #             - ./logs:/opt/airflow/logs
+# #             - ./plugins:/opt/airflow/plugins
+# #             - ./scripts:/opt/airflow/scripts
+# #             - ./credentials/:/opt/airflow/credentials:ro
+ 
+
+# #     webserver:
+# #         build: .
+# #         entrypoint: ./scripts/entrypoint.sh
+# #         restart: on-failure
+# #         depends_on:
+# #             - postgres
+# #             - scheduler
+# #         env_file:
+# #             - .env
+# #         volumes:
+# #             - ./dags:/opt/airflow/dags
+# #             - ./logs:/opt/airflow/logs
+# #             - ./plugins:/opt/airflow/plugins
+# #             - ./credentials/:/opt/airflow/credentials:ro
+# #             - ./scripts:/opt/airflow/scripts
+
+# #         user: "${AIRFLOW_UID:-50000}:0"
+# #         ports:
+# #             - "8080:8080"
+# #         healthcheck:
+# #             test: [ "CMD-SHELL", "[ -f /home/airflow/airflow-webserver.pid ]" ]
+# #             interval: 30s
+# #             timeout: 30s
+# #             retries: 3
+
+
+# # networks:
+# #   local_network:
+# #     driver: bridge
+
+# # volumes:
+# #   postgres-db-volume:                              
+
+
+# version: '3'
+
+# services:
+#   # MySQL part
+#   app:
+#     image: mysql:8.0
+#     environment:
+#       MYSQL_ROOT_PASSWORD: root
+#       MYSQL_DATABASE: airportdb
+#     ports:
+#       - "3307:3306"
+#     networks:
+#       - local_network
+
+#   # PostgreSQL part
+#   postgres:
+#     image: postgres:13
+#     env_file:
+#       - .env
+#     volumes:
+#       - postgres-db-volume:/var/lib/postgresql/data
+#     healthcheck:
+#       test: ["CMD", "pg_isready", "-U", "airflow"]
+#       interval: 5s
+#       retries: 5
+#     restart: always
+
+#   # Airflow Scheduler
+#   scheduler:
+#     build: .
+#     command: scheduler
+#     restart: on-failure
+#     depends_on:
+#       - postgres
+#     env_file:
+#       - .env
+#     volumes:
+#       - ./dags:/opt/airflow/dags
+#       - ./logs:/opt/airflow/logs
+#       - ./plugins:/opt/airflow/plugins
+#       - ./scripts:/opt/airflow/scripts
+#       - ./credentials/:/opt/airflow/credentials:ro
+
+#   # Airflow Webserver
+#   webserver:
+#     build: .
+#     entrypoint: ./scripts/entrypoint.sh
+#     restart: on-failure
+#     depends_on:
+#       - postgres
+#       - scheduler
+#     env_file:
+#       - .env
+#     volumes:
+#       - ./dags:/opt/airflow/dags
+#       - ./logs:/opt/airflow/logs
+#       - ./plugins:/opt/airflow/plugins
+#       - ./credentials/:/opt/airflow/credentials:ro
+#       - ./scripts:/opt/airflow/scripts
+#     user: "${AIRFLOW_UID:-50000}:0"
+#     ports:
+#       - "8080:8080"
+#     healthcheck:
+#       test: [ "CMD-SHELL", "[ -f /home/airflow/airflow-webserver.pid ]" ]
+#       interval: 30s
+#       timeout: 30s
+#       retries: 3
+
+#   # Airflow Database Upgrade
+#   db-upgrade:
+#     build: .
+#     command: ["bash", "-c", "airflow db upgrade"]
+#     depends_on:
+#       - postgres
+#     env_file:
+#       - .env
+#     volumes:
+#       - ./dags:/opt/airflow/dags
+#       - ./logs:/opt/airflow/logs
+#       - ./plugins:/opt/airflow/plugins
+#       - ./scripts:/opt/airflow/scripts
+#       - ./credentials/:/opt/airflow/credentials:ro
+
+# networks:
+#   local_network:
+#     driver: bridge
+
+# volumes:
+#   postgres-db-volume:
+
+
+
+
+
+
+
+
+
+version: '3'
+
+services:
+  # MySQL part
+  app:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: airportdb
+    ports:
+      - "3307:3306"
+    networks:
+      - local_network
+
+  # PostgreSQL part
+  postgres:
+    image: postgres:13
+    env_file:
+      - .env
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  # Airflow Scheduler
+  scheduler:
+    build: .
+    command: ["bash", "-c", "airflow db upgrade && airflow scheduler"]
+    restart: on-failure
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./scripts:/opt/airflow/scripts
+      - ./credentials/:/opt/airflow/credentials:ro
+
+  # Airflow Webserver
+  webserver:
+    build: .
+    entrypoint: ["bash", "-c", "airflow db upgrade && ./scripts/entrypoint.sh"]
+    restart: on-failure
+    depends_on:
+      - postgres
+      - scheduler
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./credentials/:/opt/airflow/credentials:ro
+      - ./scripts:/opt/airflow/scripts
+    user: "${AIRFLOW_UID:-50000}:0"
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: [ "CMD-SHELL", "[ -f /home/airflow/airflow-webserver.pid ]" ]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+
+networks:
+  local_network:
+    driver: bridge
+
+volumes:
+  postgres-db-volume:
