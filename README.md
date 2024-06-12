@@ -14,6 +14,22 @@ Implement a data mart providing analysis of flight bookings. Our company special
 - Integrated Python, GCP, BigQuery, and Airflow for a robust, scalable data engineering solution.
 - Implemented a data mart for flight bookings analysis, enhancing business intelligence capabilities.
 - Converted OLTP to OLAP using stored procedures and Airflow for automation, with live testing in Power BI.
+
+## Docker Usage for Apache Airflow
+
+I utilized Docker for managing Apache Airflow, providing a consistent environment across different development and production environments. Here's how you can use Docker with Airflow:
+
+### Using Docker Compose
+
+To simplify the setup process, I used Docker Compose. You can find the `docker-compose.yml` file [here](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/docker-compose.yml).
+
+### Building the Docker Image
+
+To build the Docker image for Apache Airflow, you can use the provided Dockerfile. You can find the Dockerfile [here](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/dockerfile). Navigate to the directory containing your Dockerfile and run:
+
+```bash
+docker build -t my-airflow-image .
+
 ### Airflow DAG Overview
 This Airflow DAG automates the process of moving data from an OLTP system to an OLAP system using Google Cloud services. Here's how it works:
 
