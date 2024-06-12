@@ -27,8 +27,6 @@ To simplify the setup process, I used Docker Compose. You can find the `docker-c
 
 To build the Docker image for Apache Airflow, you can use the provided Dockerfile. You can find the Dockerfile [here](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/dockerfile). Navigate to the directory containing your Dockerfile and run:
 
-```bash
-docker build -t my-airflow-image .
 
 ### Airflow DAG Overview
 This Airflow DAG automates the process of moving data from an OLTP system to an OLAP system using Google Cloud services. Here's how it works:
