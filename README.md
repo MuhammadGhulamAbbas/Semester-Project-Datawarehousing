@@ -4,7 +4,16 @@
 
 ### Overview
 Implement a data mart providing analysis of flight bookings. Our company specializes in flight management. Our transactional database stores comprehensive information about airports, airlines, passengers, flights, and bookings. Notably, a passenger can make multiple bookings on the same flight. The database also contains additional information, such as details about employees, weather, and flight schedules, which are not pertinent to our analysis.
+## Experience Highlights
 
+- Designed ETL processes using Google BigQuery and automated data transformation/loading.
+- Leveraged GCP for scalable data storage/processing and created Power BI dashboards for insights.
+- Used Python with Pandas and Google Cloud Client for data manipulation/integration.
+- Implemented Apache Airflow for workflow automation with Directed Acyclic Graphs (DAGs).
+- Encapsulated ETL logic into reusable Python functions, promoting modularity and maintainability.
+- Integrated Python, GCP, BigQuery, and Airflow for a robust, scalable data engineering solution.
+- Implemented a data mart for flight bookings analysis, enhancing business intelligence capabilities.
+- Converted OLTP to OLAP using stored procedures and Airflow for automation, with live testing in Power BI.
 ### Airflow DAG Overview
 This Airflow DAG automates the process of moving data from an OLTP system to an OLAP system using Google Cloud services. Here's how it works:
 
