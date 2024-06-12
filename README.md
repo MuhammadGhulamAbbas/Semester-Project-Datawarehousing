@@ -35,11 +35,16 @@ This Airflow DAG automates the process of moving data from an OLTP system to an 
 The DAG is initialized with default arguments like owner, start date, retries, and retry delay.
 
 #### Task Definitions:
+
 Several PythonOperator tasks are defined:
-- **create_table_in_bigquery**: Extracts schemas from the OLTP system and creates tables in BigQuery's staging dataset.
-- **export_data_to_bigquery**: Transfers data from a MySQL OLTP database to BigQuery.
-- **Facts_and_Dimensions**: Creates facts and dimensions tables in the OLAP database.
-- **export_data_from_OLTP_to_OLAP**: Cleans data in the staging database and exports it to the OLAP dataset.
+- [**create_table_in_bigquery**](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Pipeline%20Python%20Script%20(Conversion%20Functions)%20(PYT)/create_bigquery_table.py): Extracts schemas from the OLTP system and creates tables in BigQuery's staging dataset.
+
+- [**export_data_to_bigquery**](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Pipeline%20Python%20Script%20(Conversion%20Functions)%20(PYT)/export_data_to_bigquery.py): Transfers data from a MySQL OLTP database to BigQuery.
+
+- [**Facts_and_Dimensions**](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Pipeline%20Python%20Script%20(Conversion%20Functions)%20(PYT)/Facts_and_Dimensions.py): Creates facts and dimensions tables in the OLAP database.
+
+- [**export_data_from_OLTP_to_OLAP**](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Pipeline%20Python%20Script%20(Conversion%20Functions)%20(PYT)/export_data_from_OLTP_to_OLAP.py): Cleans data in the staging database and exports it to the OLAP dataset.
+
 
 #### DAG Structure:
 Tasks are organized with dependencies using the `>>` operator, ensuring they run sequentially. For instance, `create_table_in_bigquery` must finish before `export_data_to_bigquery` starts.
