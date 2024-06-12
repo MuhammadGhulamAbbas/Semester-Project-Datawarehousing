@@ -41,11 +41,17 @@ The Airflow DAG file responsible for orchestrating this process can be found [he
 #### Airflow DAG:
 ![Airflow DAG](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/assets/83417345/a86ab170-7b3d-4bc0-9c30-e4b92e044a55)
 
+#### Airflow DAG Structure:
+![Airflow DAG Structure](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/IMAGES/WhatsApp%20Image%202024-06-02%20at%2014.35.54.jpeg)
+
 #### Data Warehousing:
 ![Data Warehousing](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/IMAGES/WhatsApp%20Image%202024-06-02%20at%2014.35.55%20(2).jpeg)
 
 #### PowerBI Dashboard:
 ![PowerBI Dashboard](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Dashboarding%20(PowerBI)/WhatsApp%20Image%202024-06-07%20at%2023.04.27.jpeg)
+
+#### Live Testing on PowerBI:
+![Live Testing on PowerBI](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Dashboarding%20(PowerBI)/WhatsApp%20Image%202024-06-01%20at%2000.39.14.jpeg)
 
 #### Live Testing on PowerBI:
 ![Live Testing on PowerBI](https://github.com/MuhammadGhulamAbbas/Semester-Project-Datawarehousing/blob/main/Dashboarding%20(PowerBI)/WhatsApp%20Image%202024-06-01%20at%2000.39.14.jpeg)
